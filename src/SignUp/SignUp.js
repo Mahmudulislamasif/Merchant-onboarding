@@ -1,6 +1,8 @@
 import React from 'react';
+import { useState } from 'react';
 
 const SignUp = () => {
+    const [userData,setUserData]=useState([])
     const onSubmitBtn=(event)=>{
         event.preventDefault()
         const comment={
@@ -13,7 +15,7 @@ const SignUp = () => {
             state: event.target.state.value,
             photo: event.target.photo.value
            }
-           console.log(comment)
+           setUserData(comment)
            
 
     }
@@ -127,10 +129,6 @@ const SignUp = () => {
                         />
                       
                     </div>
-                    
-
-
-                    
                     <input className='btn w-full max-w-xs text-white mt-4' type="submit" value="Sign Up" />
                 </form>
                 
